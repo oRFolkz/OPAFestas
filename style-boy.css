@@ -1,0 +1,943 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --green: #1db457;
+    --black: #404040;
+    --green-degrade: #2ed86f;
+}
+
+.hero .container{
+    padding: 220px 0;
+    margin: auto;
+}
+
+.container {
+    padding: 80px 80px;
+    margin: auto;
+}
+
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-video{
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    object-fit: cover;
+    z-index:-1;
+}
+
+.title {
+    font-size: clamp(1rem, 1.9rem, 2.4rem);
+    font-weight: 900;
+    font-family: 'Nunito';
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: clamp(.8rem, 1.4rem, 1.6rem);
+    font-weight: 400;
+    font-family: 'Nunito';
+    color: var(--black);
+    text-align: center;
+}
+
+.textCard{
+    position: relative;
+    max-width: 850px;
+    width: 90%;
+    margin: auto;
+    padding: 100px 20px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.clouds-mobile {
+    display: none;
+}
+
+.clouds-desktop {
+    width: 100%;
+    height: 0px;
+}
+
+.clouds-desktop img{
+    width: 100%;
+    height: 300px;
+    transform: translate(0, -50%);
+    z-index: 100;
+    position: relative;
+}
+
+@media (max-width: 768px ) {
+    .clouds-desktop {
+        display: none;
+    }
+
+    .clouds-mobile {
+        display: block;
+    }
+
+    .clouds-mobile img{
+        width: 100%;
+        height: 100px;
+        transform: translate(0, -60%);
+        z-index: 100;
+        position: relative;
+    }
+}
+
+.monteUmaFestaLinda {
+    background: url('https://i.postimg.cc/kXXzRnmq/Section-Two-Background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.monteUmaFestaLinda .textCard {
+    max-width: 40%;
+    margin: auto;
+    background-color: rgb(255,255,255,0);
+    padding: 50px 20px;
+    border-radius: 25px;
+}
+
+.monteUmaFestaLinda img {
+    display: flex;
+    margin: auto;
+}
+
+.road{
+    position: absolute;
+    left:0; 
+    right:0; 
+    bottom:-30px;
+    height:180px;
+    pointer-events:none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.road > div{
+    position:absolute;
+    background-repeat:no-repeat;
+    background-size:contain;
+    user-select:none;
+    pointer-events:none;
+    overflow: hidden;
+}
+
+#car1{
+    width:120px; 
+    height:120px;
+    bottom:0;  
+    left: -250px;
+    background-image:url('https://i.postimg.cc/J4T2sWFf/car-svgrepo-com.png');
+}
+
+#car2{
+    width:120px; 
+    height:120px;
+    bottom:0px;
+    left: 0;
+    background-image:url('https://i.postimg.cc/MGjByyp7/car-svgrepo-com-1.png');
+}
+
+#car3{
+    width:120px; 
+    height:120px;
+    bottom:0px;
+    left: 250px;
+    background-image:url('https://i.postimg.cc/tTQxDYsL/car-svgrepo-com-2.png');
+}
+
+#car4{
+    width:120px; 
+    height:120px;
+    bottom:0px;
+    left: 500px;
+    background-image:url('https://i.postimg.cc/NMDjTMm8/car-svgrepo-com-3.png');
+}
+
+.celebre {
+    background: var(--green);
+    background: linear-gradient(0deg,var(--green) 90%, var(--green-degrade) 100%);
+}
+
+.celebre .container {
+    position: relative;
+}
+
+.svg-one {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-image: url('https://i.postimg.cc/BQWd4NC7/balloon-2-svgrepo-com-1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .4;
+}
+
+.svg-two {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('https://i.postimg.cc/Qxpvt548/celebrate-svgrepo-com-3.png');
+    background-size: contain;
+    opacity: .4;
+}
+
+.svg-three {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('https://i.postimg.cc/Y0N8pNpT/party-striped-svgrepo-com.png');
+    background-size: contain;
+    opacity: .2;
+}
+
+.svg-four {
+    position: absolute;
+    top: 55%;
+    right: 40%;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+    width: 300px;
+    height: 300px;
+    background-image: url('https://i.postimg.cc/mDWBJRhV/party-hat-svgrepo-com.png');
+    background-size: contain;
+    opacity: .2;
+}
+
+@media (max-width: 768px) {
+    .svg-one, .svg-two, .svg-three, .svg-four {
+        width: 150px;
+        height: 150px;
+    }
+    .svg-one {
+        top: 15%;
+        right: 40%;
+    }
+    .svg-two {
+        top: 25%;
+        right: 35%;
+    }
+    .svg-three {
+        top: 2%;
+        right: 100%;
+    }
+    .svg-four {
+        top: 12%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 425px) {
+    .svg-one, .svg-two, .svg-three, .svg-four {
+        width: 150px;
+        height: 150px;
+    }
+    .svg-one {
+        top: 20%;
+        right: 40%;
+    }
+    .svg-two {
+        top: 35%;
+        right: 35%;
+    }
+    .svg-three {
+        top: 5%;
+        right: 100%;
+    }
+    .svg-four {
+        top: 15%;
+        right: 10%;
+    }
+}
+
+.celebre img{
+    border-radius: 20px;
+    height: 100%;
+}
+
+.celebre .mid-section-video {
+    max-height: 800px;
+    border-radius: 10px;
+}
+
+@media (max-width: 520px) {
+    .celebre .mid-section-video {
+        max-width: 90%;
+    }
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: start;
+    padding: 40px 0;
+    color: #ffffff;
+    text-align: center;
+    max-width: 700px;
+}
+
+.item {
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item__thumb {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff; 
+    padding: 4px;
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+}
+
+.item__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.item__label {
+    font-size: 15px;
+    line-height: 1.25em;
+    font-family: Nunito;
+}
+
+.ondeUsar {
+    background: url('https://i.postimg.cc/v8SvY9G7/Section3.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.ondeUsar .container {
+    position: relative;
+}
+
+.ondeUsar .textCard {
+    max-width: 40%;
+    margin: auto;
+    background-color: rgb(255,255,255,0);
+    padding: 50px 20px;
+    border-radius: 25px;
+}
+
+.space {
+    height: 500px;
+    margin-bottom: 5rem;
+}
+
+@keyframes float {
+    0%   { transform: translate3d( 0px,  0px, 0); }
+    50%  { transform: translate3d( 3px, -8px, 0); }
+    100% { transform: translate3d( 0px,  0px, 0); }
+}
+
+.random-movement1,
+.random-movement2,
+.random-movement3,
+.random-movement4 {
+    will-change: transform;
+}
+
+.random-movement1 {
+    animation: float 3s ease-in-out   -0.5s infinite;
+}
+
+.random-movement2 {
+    animation: float 5s ease-in-out   -2s   infinite;
+}
+
+.random-movement3 {
+    animation: float 4s ease-in-out -1.3s infinite;
+}
+
+.random-movement4 {
+    animation: float 4s ease-in-out -3s   infinite;
+}
+
+.text-absolute {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,45%);
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 100px 200px;
+    text-align: center;
+}
+
+@media (min-width: 1600px) { 
+    .text-absolute {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-45%,40%);
+        z-index: 100;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 100px 200px;
+        text-align: center;
+    }
+}
+.text-absolute h3{
+    color: var(--green);
+    font-family: 'Nunito';
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.text-absolute p{
+    color: var(--black);
+    font-family: 'Nunito';
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.text-absolute div {
+    max-width: 400px;
+}
+
+.festaAlegre {
+    position: relative;
+    background-color: var(--green);
+    z-index: -2;
+    overflow: hidden;
+}
+
+.svg-five {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    width: 500px;
+    height: 500px;
+    background-image: url('https://i.postimg.cc/sgtbTcNR/stars-line-svgrepo-com.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .4;
+}
+
+.svg-six {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(20%, -50%);
+    width: 500px;
+    height: 500px;
+    background-image: url('https://i.postimg.cc/HLXRRyq8/stars-svgrepo-com.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .4;
+}
+
+.rain{
+    position: absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.drop{
+    position:absolute;
+    top:-10%;
+    width:64px;
+    animation-name:fall;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    z-index: -1;
+}
+
+@keyframes fall{
+    0%   {transform:translateY(0)   rotate(0deg);   opacity:1;}
+    90%  {opacity:1;}
+    100% {transform:translateY(110vh) rotate(360deg); opacity:0;}
+}
+
+
+.festaAlegre .textCard {
+    max-width: 40%;
+    margin: auto;
+    margin-top: -3rem;
+    background-color: rgb(255,255,255,0);
+    padding: 50px 20px;
+    border-radius: 25px;
+}
+
+.carousel{
+    width: 100%;
+    max-width: 1040px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.carousel__track{
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    flex-wrap: nowrap;
+    transition: transform .6s ease-in-out;
+}
+
+.carousel__track img{
+    flex: 0 0 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+    user-select: none;
+    pointer-events: none;
+}
+
+.textCard-Perguntas {
+    padding: 0 80px;
+    margin: auto;
+    max-width: 1400px;
+}
+
+.perguntas {
+    position: relative;
+}
+
+.perguntas::before{
+    content:"";
+    position:absolute; 
+    inset:0;
+    background:url('https://i.postimg.cc/4d9p1S5k/1effd313-cc68-42bb-b0b2-954062643811.jpg') center/cover no-repeat;
+    opacity:.3;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.perguntas h4{
+    font-size: clamp(1.5rem, 1.5rem, 2.2rem);
+    font-weight: 800;
+    color: black;
+    font-family: 'Nunito';
+    margin-bottom: 0.5rem;
+}
+
+.perguntas p{
+    font-size: clamp(1rem, 1.1rem, 2rem);
+    color: black;
+    max-width: 60%;
+    font-family: 'Nunito';
+    margin-bottom: 1.5rem;
+}
+
+.sobreOpa {
+    background-color: var(--green);
+    border-radius: 500px 500px 0 0;
+    position: relative;
+}
+
+.img-sobreOpa {
+    width: 50%;
+    max-width: 800px;
+}
+.dual-wave{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:200px;
+    pointer-events:none;
+    z-index:5;
+}
+
+.dual-wave::before,
+.dual-wave::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-repeat:repeat-x;
+    background-size:200% 100%;
+    animation:wave 12s linear infinite;
+}
+
+.dual-wave::before{
+    background-image:url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">\<path fill="%23ffffff" d="M0,30 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,60 L0,60 Z"/>\</svg>');
+    opacity: 1;
+    animation-duration:12s;  
+}
+
+.dual-wave::after{
+    background-image:url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">\<path fill="%23ffffff" d="M0,80 C240,40 480,120 720,80 C960,40 1200,120 1440,80 L1440,120 L0,120 Z"/>\</svg>');
+    top:20px;
+    opacity: .8;
+    animation-duration:12s;  
+}
+
+@keyframes wave{
+    0%   {background-position-x:0;}
+    100% {background-position-x:-100%;}
+}
+
+.text-left {
+    text-align: start;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.white{
+    color: white;
+}
+
+.textCard-left {
+    padding: 0 120px;
+    max-width: 900px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-wrapper{
+    position:fixed;
+    top:120px; 
+    left:50%; 
+    width: 80%;
+    max-width: 600px;
+    transform:translateX(-50%);
+    z-index:1000;
+    pointer-events:none;
+    animation: enter 5s ease-in-out;
+}
+
+.buy-button{
+    position:relative;
+    z-index:2;
+    pointer-events:auto;
+
+    padding:14px 36px;
+    font:700 2rem/1 "Nunito";
+    color:#fff;
+    background:#18a115;
+    border-radius:10px;
+    text-decoration:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: cta-float3 3.5s ease-in-out infinite;
+}
+
+.buy-button::before{
+    content:""; 
+    position:absolute; 
+    inset:0; 
+    border-radius:inherit;
+    background:repeating-linear-gradient(
+        135deg,#ffd86d 0 12px,#ff496c 12px 24px,#ffd86d 24px 36px);
+    animation:borderMove 6s linear infinite;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0); 
+    mask-composite:exclude;
+    padding:4px; 
+    pointer-events:none;
+
+}
+
+@keyframes borderMove{
+    from{background-position:0 0;} to{background-position:144px 0;}
+}
+
+.cta-deco{
+    position:absolute;
+    top:-100px;
+    width:120px; 
+    height:auto;
+    z-index:1;
+    animation:float 3.5s ease-in-out infinite;
+}
+
+.deco-left { 
+    left:-10px;  
+    animation-delay:-1s; 
+    animation: cta-float1 3.5s ease-in-out infinite;
+}
+
+.deco-right{ 
+    right:-10px; 
+    animation: cta-float2 3.5s ease-in-out infinite;
+}
+
+@keyframes enter{
+    0% {transform: translateX(-3000px);}
+    80% {transform: translateX(-40%);}
+    90% {transform: translateX(-60%);}
+    100%{transform: translatex(-50%);}
+}
+@keyframes cta-float1{
+    0%,100%{transform: rotate(-5deg);}
+    50%   {transform: rotate(5deg);}
+}
+@keyframes cta-float2{
+    0%,100%{transform: rotate(5deg);}
+    50%   {transform: rotate(-5deg);}
+}
+@keyframes cta-float3{
+    0%,100%{transform: rotate(1deg);}
+    50%   {transform: rotate(-1deg);}
+}
+
+.balloon-rain{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: inherit;
+    overflow: hidden;
+}
+
+.balloon{
+    position: absolute;
+    bottom: 0px;
+    font-size: 80px;
+    pointer-events: none;
+    animation: ballon-float var(--dur) ease-in-out infinite;
+}
+
+@keyframes ballon-float{
+    0%   { transform: translateY(0)      scale(.8); opacity:0; transform: rotate(90deg);}
+    10%  { opacity:1; }
+    50%  { transform: translateY(-1000%) scale(1);  transform: (360deg);}
+    90%  { opacity:1; }
+    100% { transform: translateY(0)      scale(.8); opacity:0; transform: rotate(180deg);}
+}
+
+@media ( max-width: 1600px ) {
+    .sobreOpa {
+        border-radius: 200px 200px 0 0;
+    }       
+} 
+
+@media ( max-width: 1440px ) { 
+    .sobreOpa .container .flex {
+        flex-direction: column;
+    }
+    .textCard-left {
+        padding: 0;
+        width: 50%;
+    }
+    .flex {
+        gap: 20px;
+    }
+    .text-absolute {
+        grid-template-columns: repeat(2, 80%);
+        transform: translate(-70%,30%);
+    }
+    .text-absolute h3 {
+        font-size: 1.5rem;
+    }
+    .text-absolute p {
+        font-size: 1.2rem;
+    }
+}
+
+@media ( max-width: 1024px ) { 
+    .monteUmaFestaLinda img {
+        width: 100%;
+    }
+    .flex {
+        flex-direction: column;
+    }
+    .textCard-left {
+        width: 90%;
+    }
+    .textCard-Perguntas {
+        margin: 0 0 0 40px;
+    }
+    .perguntas p {
+        max-width: 90%;
+    }
+    .text-absolute {
+        gap: 50px 100px;
+        transform: translate(-75%, 30%);
+    }
+    .text-absolute h3 {
+        font-size: 1.5rem;
+    }
+    .text-absolute p {
+        font-size: 1.2rem;
+    }
+}
+
+@media ( max-width: 768px ) {
+    .container {
+        padding: 80px 0;
+    }
+    .ondeUsar .container {
+        padding: 0px;
+    }
+    .monteUmaFestaLinda .textCard {
+        max-width: 95%;
+        padding-top: 0;
+    }
+    .monteUmaFestaLinda img {
+        width: 100%;
+    }
+    .flex { 
+        flex-direction: column;
+    }
+    .textCard-left {
+        padding: 0 20px;
+        width: 100%;
+    }
+    .textCard-left h1{
+        text-align: center;
+    }
+    .textCard-left p{
+        text-align: center;
+    }
+    .item__thumb {
+        width: 100px;
+        height: 100px;
+    }
+    .catalogo {
+        justify-content: center;
+        gap: 30px 30px;
+    }
+    .celebre img {
+        width: 95%;
+        height: unset;
+        margin-bottom: 5rem;
+    }   
+    .text-absolute {
+        grid-template-columns: repeat(2, 60%);
+        transform: translate(-60%, 40%);
+        gap: 20px 50px;
+    }
+    .ondeUsar .textCard {
+        max-width: 90%;
+    }
+    .text-absolute h3{
+        font-size: 1rem;
+    }
+    .text-absolute p{
+        font-size: .8rem;
+    }
+    .space {
+        height: 300px;
+    }
+    .ondeUsar {
+        background-size: 700px;
+        background-position: 50% 85%;
+    }
+    .festaAlegre .textCard {
+        max-width: 95%;
+    }
+    .textCard-Perguntas {
+        width: 90%;
+        padding: 0;
+        margin-left: 20px;
+    }
+    .sobreOpa {
+        border-radius: 50px 50px 0 0;
+    }
+    .img-sobreOpa {
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .clouds img {
+        height: 100px;
+    }
+    .perguntas p{
+        max-width: 90%;
+    }
+    #car1{
+        left: -1500px;
+    }
+
+    #car2{
+        left: -1600px;
+    }
+
+    #car3{
+        left: -1700px;
+    }
+
+    #car4{
+        left: -1800px;
+    }
+}
+
+@media (max-width: 425px) {
+    .text-absolute h3{
+        font-size: 1.8rem;
+    }
+    .text-absolute p{
+        font-size: 1.2rem;
+    }
+    .text-absolute {
+        grid-template-columns: repeat(1, 90%);
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        transform: unset;
+        top: unset;
+        left: unset;
+    }
+    .ondeUsar {
+        background-position: unset;
+        background: url('https://i.postimg.cc/3wJXsybJ/popular-produtcs-background-image.png');
+        background-size: contain;
+    }
+    .space {
+        display: none;
+    }
+    .catalogo {
+        gap: 30px 2px;
+    }
+    .imgDesktop {
+        display: none !important;
+    }
+    .imgMobile {
+        display: block !important;
+    }
+    .carousel {
+        width: 92%;
+    }
+    .ondeUsar .container {
+        padding: 0 0 80px 0;
+    }
+}
