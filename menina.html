@@ -15,10 +15,13 @@
             <source src="dino.mp4" type="video/mp4">
             Seu navegador não suporta vídeos HTML5.
         </video>
+        <div class="hero-sign">
+            <img src="placa.png" alt="">
+        </div>
         <div class="container">
             <div class="textCard">
                 <h1 class="title">Aqui, você encontra tudo em um só lugar <br>Sem estresse, sem correria e sem complicação </h1>
-                <p class="text">Nossa coleção é um convite para celebrar os pequenos e grandes momentos da vida, porque todo dia feliz merece uma festa.</p>
+                <p class="text white">Nossa coleção é um convite para celebrar os pequenos e grandes momentos da vida, porque todo dia feliz merece uma festa.</p>
             </div>
         </div>
     </section>
@@ -129,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <video class="mid-section-video" autoplay muted loop playsinline preload="auto">
+                    <video class="mid-section-video" autoplay muted loop playsinline preload="auto">
                     <source src="dino-mid-section.mp4" type="video/mp4">
                     Seu navegador não suporta vídeos HTML5.
                 </video>
@@ -281,7 +284,7 @@
     if (!track) return;
 
     const visible = 4;
-    const delay   = 2500;
+    const delay   = 4000;
     const speed   = 600;
     let index     = 0;
 
@@ -317,14 +320,12 @@
     const rain = document.querySelector('.rain');
     if (!rain) return;
 
-    const totalDrops = 10;
+    const totalDrops = 2;
     const sprites = [
-        'https://i.postimg.cc/yNHXdgvL/ballon-birthday-carnival-svgrepo-com.png',
-        'https://i.postimg.cc/c4PBp5Yy/celebrate-svgrepo-com.png',
-        'https://i.postimg.cc/pXmB1tmJ/confetti-ball-svgrepo-com.png',
-        'https://i.postimg.cc/ZY7ccq5q/party-hat-birthday-svgrepo-com.png',
-        'https://i.postimg.cc/WzHwb5HZ/party-popper-svgrepo-com.png',
-        'https://i.postimg.cc/dVdjwmm7/partying-face-svgrepo-com.png'
+        'https://i.postimg.cc/mDWBJRhV/party-hat-svgrepo-com.png',
+        'https://i.postimg.cc/VLphrVYc/bounce-svgrepo-com.png',
+        'https://i.postimg.cc/Nf5V0cv4/celebrate-svgrepo-com-4.png',
+        'https://i.postimg.cc/nVdgZLgr/party-striped-svgrepo-com-1.png'
     ];
 
     for (let i = 0; i < totalDrops; i++) {
@@ -332,7 +333,7 @@
         drop.src   = sprites[Math.floor(Math.random() * sprites.length)];
         drop.className = 'drop';
 
-        const size  = 40 + Math.random() * 40;
+        const size  = 60 + Math.random() * 40;
         const left  = Math.random() * 100;
         const dur   = 6  + Math.random() * 4;
         const delay = -Math.random() * dur;
@@ -387,8 +388,8 @@
 
     const MAX      = 3;
     const MIN_DUR  = 4;
-    const MAX_DUR  = 7;
-    const SPAWN_MS = 800;
+    const MAX_DUR  = 10;
+    const SPAWN_MS = 1200;
     const EMOJIS   = ['🎈', '🍬', '🧁', '🍭', '🎂'];
 
     function randomEmoji() {
