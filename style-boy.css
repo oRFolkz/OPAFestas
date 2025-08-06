@@ -453,6 +453,15 @@
     100% { transform: translate3d( 0px,  0px, 0); }
 }
 
+@keyframes movement-cloud {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.movement-cloud {
+    animation: movement-cloud 2s ease-in;
+}
+
 .random-movement1,
 .random-movement2,
 .random-movement3,
