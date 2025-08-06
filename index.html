@@ -1,110 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opa Festas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opa Festas</title>
 
-    <style>   
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-        
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Nunito',sans-serif;
+    }
+
+    html,body{
+        height:100%;
+        background:#ffeded;
+        overflow:hidden;
+    }
+
+    .wave-wrap{
+        position:absolute;top:0;left:0;
+        width:100%;height:140px;
+        transform:scaleY(-1);
+        overflow:hidden;
+    }
+
+    #liquid{
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        overflow:hidden;
+    }
+
+    #wave, #wave2{
+        position:absolute;
+        top:0; 
+        left:0;
+        width:200%;
+        height:140px;
+        transform: rotate(460deg);
+        animation:waveSlide linear infinite;
+    }
+
+    #wave   { 
+        fill:#ff78c8; 
+        animation-duration: 20s;
+    }
+    #wave2  { 
+        fill:#7cc8ff; 
+        opacity:.85; 
+        animation-duration:100s; 
+        animation-delay:-3s; 
+    }
+
+    @keyframes waveSlide{ 
+        from{ transform:translateX(0); } 
+        to{ transform:translateX(-50%); } 
+    }
+
+    .hero{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        margin-top:100px;
+    }
+
+    h1{
+        font-size:clamp(2rem,4vw,3rem);
+        margin-bottom:2rem;
+        color: #404040;
+        z-index: 2;
+    }
+    .buttons{
+        display:flex;
+        gap:2rem;
+    }
+    .gender-btn{
+        padding:1rem 2.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size:1.25rem;
+        border:none;
+        border-radius:20px;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        gap:.5rem;
+        color:#fff;
+        text-decoration:none;
+        transition:transform .2s,opacity .2s;
+        z-index: 2;
+    }
+
+    .gender-btn span{
+        font-size:1.5rem
+    }
+
+    .gender-btn.menino{
+        background:#2196f3
+    }
+
+    .gender-btn.menina{
+        background:#ec407a
+    }
+
+    .gender-btn:hover{
+        transform:translateY(-4px);
+        opacity:.9
+    }
+
+    .logo{
+        display:flex;
+        justify-content:center;
+        padding-top:5rem
+    }
+
+    .logo img{
+        max-height:150px
+    }
+
+    #cake-topper-one {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 350px;           
+        pointer-events: none;
+        animation: swing 3s ease-in-out infinite,
+                float  3s ease-in-out infinite;
+    }
+
+    #cake-topper-two {
+        position: fixed;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 350px;           
+        pointer-events: none;
+        animation: swing-two 3s ease-in-out infinite,
+                float  3s ease-in-out infinite;
+    }
+
+    @keyframes swing {
+        0%   { transform: translateX(100%) rotate(0deg); }
+        50%  { transform: translateX(96%) rotate(6deg); }
+        100% { transform: translateX(100%) rotate(0deg); }
+    }
+
+    @keyframes swing-two {
+        0%   { transform: translateX(-100%) rotate(0deg); }
+        50%  { transform: translateX(-96%) rotate(-6deg); }
+        100% { transform: translateX(-100%) rotate(0deg); }
+    }
+
+    @keyframes float {
+        0%   { bottom: -40px;   }
+        50%  { bottom: -35px; }
+        100% { bottom: -40px;   }
+    }
+  
+    @media (max-width: 1400px) {
+        @keyframes swing {
+            0%   { transform: translateX(20%) rotate(0deg); }
+            50%  { transform: translateX(26%) rotate(6deg); }
+            100% { transform: translateX(20%) rotate(0deg); }
         }
 
-        html, body {
-            height: 100%;
-            font-family: 'Nunito';
-            background-color: #ffeded;
+        @keyframes swing-two {
+            0%   { transform: translateX(-20%) rotate(0deg); }
+            50%  { transform: translateX(-26%) rotate(-6deg); }
+            100% { transform: translateX(-20%) rotate(0deg); }
         }
+    }
 
+    @media (max-width: 800px) {
+        @keyframes swing {
+            0%   { transform: translateX(-5%) rotate(0deg); }
+            50%  { transform: translateX(-11%) rotate(6deg); }
+            100% { transform: translateX(-5%) rotate(0deg); }
+        }
+        @keyframes swing-two {
+            0%   { transform: translateX(0%) rotate(0deg); }
+            50%  { transform: translateX(6%) rotate(-6deg); }
+            100% { transform: translateX(0%) rotate(0deg); }
+        }
+        #cake-topper-one,
+        #cake-topper-two {
+            max-width: 250px;        
+        }
         .hero {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            color: #333;
-            margin-top: 5rem;
+            margin-top: 30px;
         }
+    }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg,
-                #f8f9fa 0%,
-                #e9ecef 25%,
-                #f8f9fa 50%,
-                #e9ecef 75%,
-                #f8f9fa 100%);
-            background-size: 400% 400%;
-            animation: bgMove 15s ease infinite;
-            z-index: -1;
-        }
-            
-        @keyframes bgMove {
-            0%   { transform: translate(-25%, -25%); }
-            50%  { transform: translate(  0%,   0%); }
-            100% { transform: translate(-25%, -25%); }
-        }
-
-
-        h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2rem;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .buttons a {
-            text-decoration: none;
-        }
-
-        .gender-btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.25rem;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .gender-btn span { font-size: 1.5rem; }
-        .gender-btn.menino { background: #2196f3; color: #fff; }
-        .gender-btn.menina { background: #ec407a; color: #fff; }
-        .gender-btn:hover  { transform: translateY(-4px); opacity: .9; }
-
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-self: center;
-            padding-top: 5rem;
-        }
-
-        .logo img {
-            max-height: 150px;
-            margin: auto;
-        }
-
-    </style>
+</style>
 
 </head>
 
 <body>
+
+    <div id="liquid">
+        <div class="wave-wrap">
+            <svg id="wave"  viewBox="0 0 1440 140" preserveAspectRatio="none">
+                <path d="M0 60 C120 0 240 120 360 60 C480 0 600 120 720 60 C840 0 960 120 1080 60 C1200 0 1320 120 1440 60 V140 H0 Z"/>
+            </svg>
+            <svg id="wave2" viewBox="0 0 1440 140" preserveAspectRatio="none">
+                <path d="M0 80 C120 20 240 140 360 80 C480 20 600 140 720 80 C840 20 960 140 1080 80 C1200 20 1320 140 1440 80 V140 H0 Z"/>
+            </svg>
+        </div>
+    </div>
 
     <div class="logo">
         <img src="https://cdn.dooca.store/113415/files/g4789.png?v=1680891437" alt="Logo da empresa">
@@ -112,13 +222,23 @@
 
     <section class="hero">
         <h1>Para quem será a festinha hoje?</h1>
-
         <div class="buttons">
-            <a href="/menino.html" class="gender-btn menino"><span>👦</span>Menino</a>
-            <a href="/menina.html" class="gender-btn menina"><span>👧</span>Menina</a>
+            <a href="/dino.html"   class="gender-btn menino"><span>👦</span>Menino</a>
+            <a href="/flores.html" class="gender-btn menina"><span>👧</span>Menina</a>
         </div>
-
     </section>
+
+        
+    <div id="cake-topper-one">
+        <img src="dino-topper.png"
+            alt="Topo de bolo dinossauro fofo"
+            style="width:100%; display:block;">
+    </div>
+    <div id="cake-topper-two">
+        <img src="flores-topper.png"
+            alt="Topo de bolo dinossauro fofo"
+            style="width:100%; display:block;">
+    </div>
 
 </body>
 </html>
