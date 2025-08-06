@@ -113,6 +113,7 @@
         pointer-events: none;
         outline: 1px solid transparent;
     }
+
     @keyframes borderMove {
         0% {
         background-position: 0 0;
@@ -153,24 +154,28 @@
         position: fixed;
         bottom: 0;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(100%);
         width: 80%;
         max-width: 350px;           
         pointer-events: none;
-        animation: swing 3s ease-in-out infinite,
-                float  3s ease-in-out infinite;
+        animation: enter 3s ease-out forwards, swing 3s ease-in-out 3s infinite, float  3s ease-in-out 3s infinite;
     }
 
     #cake-topper-two {
         position: fixed;
         bottom: 0;
         right: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-100%);
         width: 80%;
         max-width: 350px;           
         pointer-events: none;
-        animation: swing-two 3s ease-in-out infinite,
-                float  3s ease-in-out infinite;
+        animation: enter 3s ease-out forwards, swing-two 3s ease-in-out 3s infinite, float  3s ease-in-out 3s infinite;
+    }
+
+    @keyframes enter {
+        0%   { bottom: -600px;   }
+        80%  { bottom: -30px; }
+        100% { bottom: -40px;   }
     }
 
     @keyframes swing {
@@ -203,6 +208,14 @@
             50%  { transform: translateX(-26%) rotate(-6deg); }
             100% { transform: translateX(-20%) rotate(0deg); }
         }
+
+        #cake-topper-one {
+            transform: translateX(20%);
+        }
+
+        #cake-topper-two {
+            transform: translateX(-20%);
+        }
     }
 
     @media (max-width: 800px) {
@@ -216,6 +229,15 @@
             50%  { transform: translateX(6%) rotate(-6deg); }
             100% { transform: translateX(0%) rotate(0deg); }
         }
+
+        #cake-topper-one {
+            transform: translateX(-5%);
+        }
+
+        #cake-topper-two {
+            transform: translateX(0%);
+        }
+
         #cake-topper-one,
         #cake-topper-two {
             max-width: 250px;        
@@ -260,16 +282,17 @@
         </div>
     </section>
 
-        
-    <div id="cake-topper-one">
-        <img src="dino-topper.webp"
-            alt="Topo de bolo dinossauro fofo"
-            style="width:100%; display:block;">
-    </div>
-    <div id="cake-topper-two">
-        <img src="flores-topper.webp"
-            alt="Topo de bolo dinossauro fofo"
-            style="width:100%; display:block;">
+    <div class="div">
+        <div id="cake-topper-one">
+            <img src="dino-topper.webp"
+                alt="Topo de bolo dinossauro fofo"
+                style="width:100%; display:block;">
+        </div>
+        <div id="cake-topper-two">
+            <img src="flores-topper.webp"
+                alt="Topo de bolo dinossauro fofo"
+                style="width:100%; display:block;">
+        </div>
     </div>
 
 </body>
